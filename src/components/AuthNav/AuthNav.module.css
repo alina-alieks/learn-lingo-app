@@ -1,0 +1,28 @@
+.authNavWrap {
+  display: flex;
+  gap: 16px;
+}
+.logIn {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+.iconArrow {
+  color: var(--button);
+}
+
+.registration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 14px 39px;
+  background-color: var(--main);
+  color: var(--background);
+  font-weight: 700;
+}

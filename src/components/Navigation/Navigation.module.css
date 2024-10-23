@@ -11,9 +11,9 @@
 }
 .link:hover,
 .link:focus {
-  color: var(--button-hover);
+  color: var(--button);
 }
 
 .isActive {
-  color: var(--button-hover);
+  color: var(--button);
 }
