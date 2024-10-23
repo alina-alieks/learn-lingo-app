@@ -1,0 +1,14 @@
+.divNotFoundMessage {
+  text-align: center;
+  padding-top: 200px;
+}
+
+.linkHome {
+  color: var(--button);
+  transition: color 250ms linear;
+}
+
+.linkHome:hover,
+.linkHome:focus {
+  color: var(--button-hover);
+}

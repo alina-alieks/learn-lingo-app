@@ -1,0 +1,8 @@
+/node_modules
+/src/redux
+/src/farebase
+
+
+.vscode
+.DS_Store
+.idea
