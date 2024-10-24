@@ -1,0 +1,130 @@
+.wrapItem {
+  display: flex;
+  /* gap: 48px; */
+  /* justify-content: center; */
+  padding-left: 64px;
+  padding-right: 64px;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.wrapAvatar {
+  position: relative;
+  border: 3px solid #fbe9ba;
+  border-radius: 100px;
+  width: 120px;
+  height: 120px;
+  padding: 9px;
+  flex-shrink: 0;
+  margin-right: 48px;
+}
+
+.wrapImg {
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  top: 12.5%;
+  right: 17%;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #38cd3e;
+  border: 2px solid var(--background);
+}
+
+.listInfo {
+  font-weight: 500;
+  line-height: 1.5;
+  color: #8a8a89;
+}
+
+.textInfo,
+.textInfoSpeaks {
+  color: var(--main);
+}
+.textInfoSpeaks {
+  text-decoration: underline;
+}
+.wrapListInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.headInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.headInfoDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headInfoItem {
+  font-weight: 500;
+  line-height: 1.5;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-right: 1px solid rgba(18, 20, 23, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: first baseline;
+  gap: 8px;
+}
+
+.headInfoItem:last-child {
+  border-right: none;
+}
+
+.star {
+  color: var(--button);
+  flex-shrink: 0;
+}
+
+.iconBook {
+  flex-shrink: 0;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 32px;
+}
+
+.btnMore {
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  padding-left: 0;
+  margin-bottom: 32px;
+}
+
+.listLevel {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.itemLevel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  border-radius: 35px;
+  padding: 8px 12px;
+}
+
+.itemLevel:first-child {
+  border: none;
+  background-color: var(--button);
+}
