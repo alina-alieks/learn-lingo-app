@@ -1,0 +1,28 @@
+.wrap {
+  border: 1.5px dashed #f4c550;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 40px 123px;
+}
+
+.num {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+
+.text {
+  font-size: 14px;
+  width: 74px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: rgba(18, 20, 23, 0.7);
+}
+
+.wrapItem {
+  display: flex;
+  gap: 16px;
+}

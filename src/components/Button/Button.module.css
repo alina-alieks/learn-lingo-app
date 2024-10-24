@@ -1,0 +1,19 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 16px 88px;
+  background-color: var(--button);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--main);
+  transition: color 250ms linear;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  background-color: var(--button-hover);
+}

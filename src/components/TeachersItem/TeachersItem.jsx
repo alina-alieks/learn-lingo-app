@@ -1,5 +1,5 @@
-import css from "./TruckItem.module.css";
+import css from "./TeachersItem.module.css";
 
-export default function TruckItem() {
+export default function TeachersItem() {
   return;
 }
