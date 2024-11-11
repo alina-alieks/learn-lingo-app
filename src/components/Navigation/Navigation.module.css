@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 32px;
+  gap: 28px;
+  flex-wrap: wrap;
 }
 
 .link {

@@ -2,7 +2,8 @@ import { PiBookOpenBold } from "react-icons/pi";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import css from "./TeachersItem.module.css";
-import Button from "../Button/Button";
+import { NavLink, Outlet } from "react-router-dom";
+import clsx from "clsx";
 
 export default function TeachersItem({ teacher }) {
   return (
@@ -29,7 +30,10 @@ export default function TeachersItem({ teacher }) {
               Rating: {teacher.rating}
             </p>
             <p className={css.headInfoItem}>
-              Price / 1 hour: <span>{teacher.price_per_hour}$</span>
+              Price / 1 hour:{" "}
+              <span className={css.price_per_hour}>
+                {teacher.price_per_hour}$
+              </span>
             </p>
           </div>
         </div>
@@ -52,9 +56,15 @@ export default function TeachersItem({ teacher }) {
             <span className={css.textInfo}>{teacher.conditions.join(" ")}</span>
           </p>
         </div>
-        <button className={css.btnMore} type="button">
+        <NavLink
+          className={({ isActive }) =>
+            clsx(css.btnMore, isActive && css.btnMoreActive)
+          }
+          to={`teachers/${teacher.id}`}
+        >
           Read more
-        </button>
+        </NavLink>
+        <Outlet />
         <ul className={css.listLevel}>
           {teacher.levels.map((item, i) => (
             <li className={css.itemLevel} key={i}>
@@ -63,7 +73,7 @@ export default function TeachersItem({ teacher }) {
           ))}
         </ul>
       </div>
-      <FaRegHeart />
+      <FaRegHeart className={css.iconHeart} />
     </div>
   );
 }

@@ -7,5 +7,6 @@
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #121417;
+  color: var(--main);
+  margin-right: 10px;
 }
