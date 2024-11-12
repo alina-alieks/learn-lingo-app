@@ -1,15 +1,47 @@
 import TeachersItem from "../TeachersItem/TeachersItem";
-// import teachers from "../../teachers.json";
-
 import Button from "../Button/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import {
+  selectAllTeachers,
+  selectLastKey,
+} from "../../redux/teachers/selectors";
+import { fetchTeachers } from "../../redux/teachers/operations";
 
 import css from "./TeachersList.module.css";
-import { useSelector } from "react-redux";
-import { selectAllTeachers } from "../../redux/teachers/selectors";
 
 export default function TeachersList() {
+  const dispatch = useDispatch();
   const teachers = useSelector(selectAllTeachers);
-  // console.log(teachers);
+  const lastKey = useSelector(selectLastKey);
+  // console.log(lastKey);
+
+  const [page, setPage] = useState(1);
+  const [isLoadMore, setIsLoadMore] = useState(true);
+  const limit = 4;
+
+  useEffect(() => {
+    const loadInitialTeachers = async () => {
+      const response = await dispatch(
+        fetchTeachers({ page: 1, limit, lastKey: null })
+      ).unwrap();
+      if (response.teachers.length < limit) {
+        setIsLoadMore(false);
+      }
+    };
+    loadInitialTeachers();
+  }, [dispatch, limit]);
+
+  const handleClick = async () => {
+    const response = await dispatch(
+      fetchTeachers({ page: page + 1, limit, lastKey })
+    ).unwrap();
+    setPage((prevPage) => prevPage + 1);
+
+    if (response.teachers.length < limit) {
+      setIsLoadMore(false);
+    }
+  };
 
   return (
     <>
@@ -22,9 +54,11 @@ export default function TeachersList() {
           );
         })}
       </ul>
-      <div className={css.btnLoad}>
-        <Button text="Load more" />
-      </div>
+      {isLoadMore && (
+        <div className={css.btnLoad}>
+          <Button text="Load more" type="button" onClick={handleClick} />
+        </div>
+      )}
     </>
   );
 }

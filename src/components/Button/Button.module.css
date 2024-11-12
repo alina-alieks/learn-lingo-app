@@ -12,8 +12,6 @@
   transition: color 250ms linear;
 }
 
-.button:hover,
-.button:active,
-.button:focus {
+.button:hover {
   background-color: var(--button-hover);
 }

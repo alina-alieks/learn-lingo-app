@@ -5,6 +5,7 @@ const slice = createSlice({
   name: "teachers",
   initialState: {
     items: [],
+    lastKey: null,
     totalItems: null,
     loading: false,
     error: null,
@@ -15,7 +16,12 @@ const slice = createSlice({
         state.loading = true;
       })
       .addCase(fetchTeachers.fulfilled, (state, action) => {
-        state.items = action.payload;
+        const newTeachers = action.payload.teachers;
+        const newItems = newTeachers.filter((teacher) =>
+          state.items.every((item) => item.id !== teacher.id)
+        );
+        state.items = [...state.items, ...newItems];
+        state.lastKey = action.payload.lastKey;
         state.totalItems = action.payload.length;
         state.loading = false;
       })
