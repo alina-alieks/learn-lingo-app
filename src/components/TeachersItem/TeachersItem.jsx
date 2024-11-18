@@ -1,11 +1,17 @@
 import { PiBookOpenBold } from "react-icons/pi";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
-import css from "./TeachersItem.module.css";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
+import Button from "../Button/Button";
 import clsx from "clsx";
+import css from "./TeachersItem.module.css";
 
 export default function TeachersItem({ teacher }) {
+  const { id } = useParams();
+  console.log(teacher.id);
+
+  const isReadMore = id === teacher.id.toString();
+
   return (
     <div className={css.wrapItem}>
       <div className={css.wrapAvatar}>
@@ -57,14 +63,12 @@ export default function TeachersItem({ teacher }) {
           </p>
         </div>
         <NavLink
-          className={({ isActive }) =>
-            clsx(css.btnMore, isActive && css.btnMoreActive)
-          }
+          className={clsx(css.btnMore, isReadMore && css.btnMoreActive)}
           to={`teachers/${teacher.id}`}
         >
           Read more
         </NavLink>
-        <Outlet />
+        {isReadMore && <Outlet />}
         <ul className={css.listLevel}>
           {teacher.levels.map((item, i) => (
             <li className={css.itemLevel} key={i}>
@@ -72,6 +76,7 @@ export default function TeachersItem({ teacher }) {
             </li>
           ))}
         </ul>
+        {isReadMore && <Button text="Book trial lesson" type="button" />}
       </div>
       <FaRegHeart className={css.iconHeart} />
     </div>
