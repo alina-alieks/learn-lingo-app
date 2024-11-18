@@ -11,7 +11,9 @@
   --button: #f4c550;
   --button-hover: #fbe9ba;
 }
-
+body {
+  background-color: var(--back);
+}
 /* Reset styles */
 h1,
 h2,

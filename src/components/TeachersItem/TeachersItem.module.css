@@ -2,7 +2,7 @@
   display: flex;
   /* gap: 48px; */
   /* justify-content: center; */
-
+  background-color: var(--background);
   border-radius: 24px;
   padding: 24px 88px;
 }
@@ -121,6 +121,8 @@
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+}
+.listLevelMargin {
   margin-bottom: 32px;
 }
 

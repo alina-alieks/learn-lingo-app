@@ -69,7 +69,7 @@ export default function TeachersItem({ teacher }) {
           Read more
         </NavLink>
         {isReadMore && <Outlet />}
-        <ul className={css.listLevel}>
+        <ul className={clsx(css.listLevel, isReadMore && css.listLevelMargin)}>
           {teacher.levels.map((item, i) => (
             <li className={css.itemLevel} key={i}>
               # {item}

@@ -6,4 +6,9 @@
   padding-left: 64px;
   padding-right: 64px;
   padding-bottom: 32px;
+  background-color: var(--back);
+}
+
+.containerHome {
+  background-color: var(--background);
 }
